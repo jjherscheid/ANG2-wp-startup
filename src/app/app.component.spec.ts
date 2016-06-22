@@ -14,4 +14,8 @@ describe('App', () => {
     // Add real test here
     expect(2).toBe(2);
   }));
+
+  it('should have correct title', inject([AppComponent], (app: AppComponent) => {
+      expect(app.title).toBe('MyOwnTitle');
+  }));
 });
