@@ -34,11 +34,6 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
       },
       {
-        test: /\.less$/,
-        exclude: /node_modules/,
-        loader: 'raw-loader!less-loader'
-      },
-      {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
         loader: 'raw'

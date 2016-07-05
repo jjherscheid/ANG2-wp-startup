@@ -20,6 +20,12 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'null'
       },
+      ,
+      {
+        test: /\.less$/,
+        exclude: /node_modules/,
+        loader: 'raw-loader!less-loader'
+      },
       {
         test: /\.css$/,
         loader: 'null'
