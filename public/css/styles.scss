@@ -1,0 +1,12 @@
+@import 'variables';
+
+body {
+    background: $background-color;
+    color: #fff;
+    padding-top: 50px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

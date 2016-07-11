@@ -1,21 +1,20 @@
-import {
-  addProviders,
-  inject
-} from '@angular/core/testing';
+import { addProviders, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App', () => {
+describe('Dashboard App', () => {
 
-  beforeEach(() => {
-    addProviders([AppComponent]);
-  });
-  
-  it ('should work', inject([AppComponent], (app: AppComponent) => {
-    // Add real test here
-    expect(2).toBe(2);
-  }));
+    // System Under Test
+    let sut: AppComponent;
 
-  it('should have correct title', inject([AppComponent], (app: AppComponent) => {
-      expect(app.title).toBe('MyOwnTitle');
-  }));
+    beforeEach(() => {
+        addProviders([AppComponent]);
+    });
+
+    beforeEach(inject([AppComponent], (app: AppComponent) => {
+        sut = app;
+    }));
+
+    it('should have correct title', () => {
+        expect(sut.title).toBe('My App Component');
+    });
 });

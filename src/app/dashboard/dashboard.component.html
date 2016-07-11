@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-8 col-centered" style="text-align:center">
+        <h1>Main Dashboard</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-centered" style="text-align:center">
+        Bootstrap and Angular 2 Webpack solution
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"
+        *ngFor="let user of users">
+          <my-dashboard-user [user]="user"></my-dashboard-user>
+    </div>    
+</div>

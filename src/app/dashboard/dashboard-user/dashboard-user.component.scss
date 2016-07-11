@@ -1,0 +1,25 @@
+@import 'variables';
+
+$child-color: #ff9933;
+$adult-color: #33cc33;
+$old-color: #800000;
+
+.dashboard-user{
+    height:100px;
+    border:solid 2px $border-color;
+    padding:5px;
+    margin-bottom: 5px;
+    border-radius: 5px;    
+}
+
+.child {
+        background-color: $child-color;
+    }
+
+    .adult {
+        background-color: $adult-color;
+    }
+
+    .old {
+        background-color: $old-color;
+    }

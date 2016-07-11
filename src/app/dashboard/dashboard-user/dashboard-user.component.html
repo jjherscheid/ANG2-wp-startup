@@ -1,0 +1,4 @@
+<div class="dashboard-user"
+    [ngClass]="{child: user.age < 18, adult: user.age >= 18 && user.age <= 60, old: user.age > 60}">        
+    UserName: {{user.userName}} ({{user.age}})   
+</div>

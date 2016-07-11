@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import '../../public/css/styles.css';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import '../../public/css/styles.scss';
+
 @Component({
-  selector: 'my-app',
-  template: require('./app.component.html'),
-  styles: [require('./app.component.css')]
+    selector: 'my-app',
+    template: require('./app.component.html'),
+    directives: [        
+        ROUTER_DIRECTIVES
+    ]
 })
 export class AppComponent {
-    title = 'MyOwnTitle';
-
-    changeTitle() {
-        this.title = 'Changed!!!';
-    }
- }
+    public title = 'My App Component';
+}
