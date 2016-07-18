@@ -18,6 +18,7 @@ module.exports = webpackMerge(commonConfig, {
   ],
 
   devServer: {
+    contentBase: helpers.root('dist'),    
     historyApiFallback: true,
     stats: 'minimal'
   }
