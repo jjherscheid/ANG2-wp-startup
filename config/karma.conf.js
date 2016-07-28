@@ -42,7 +42,7 @@ module.exports = function (config) {
                 // use this also when lcov file is needed from other tools
                 //lcovonly: 'coverage/json/lcov.info',
                 html: 'coverage/html',
-                'text': null
+                'text-summary': null
             },
             timeoutNotCreated: 1000, // default value
             timeoutNoMoreFiles: 1000 // default value
