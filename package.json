@@ -1,6 +1,6 @@
 {
   "name": "ang2-webpack-startup",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angular2 Webpack Startup",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
@@ -13,13 +13,13 @@
     "showcoverage": "lite-server -c config/coveragebrowser.json"
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-alpha.7",
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/http": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@angular/router": "3.0.0-rc.1",
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.0",
     "jquery": "1.9.1 - 2",

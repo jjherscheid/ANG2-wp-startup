@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { User } from '../shared';
-import { DashboardUserComponent } from './dashboard-user';
 
 @Component({
     selector: 'my-dashboard',
-    template: require('./dashboard.component.html'),
-    directives: [
-        DashboardUserComponent
-    ]
+    template: require('./dashboard.component.html')
 })
 export class DashboardComponent implements OnInit {
     public users: User[] = [
