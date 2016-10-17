@@ -16,4 +16,5 @@ import 'rxjs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'jquery';
-import 'bootstrap/dist/js/bootstrap.min';
+import 'bootstrap';
+import 'underscore';

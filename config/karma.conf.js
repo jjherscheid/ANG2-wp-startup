@@ -1,8 +1,13 @@
-var webpackConfig = require('./webpack.test');
 
 module.exports = function (config) {
+    
+    if(!config.debug){
+        config.debug = false;    
+    }
     var _config = {
         basePath: '',
+
+        debug: config.debug,
 
         frameworks: ['jasmine'],
 
@@ -14,7 +19,7 @@ module.exports = function (config) {
             './config/karma-test-shim.js': ['webpack', 'sourcemap'],
         },
 
-        webpack: webpackConfig,
+        webpack: config.debug ? require('./webpack.unittest') : require('./webpack.unittest-coverage'),
 
         webpackMiddleware: {
             stats: 'errors-only'
@@ -25,7 +30,7 @@ module.exports = function (config) {
         },
 
         coverageReporter: {
-            dir: 'coverage',
+            dir: 'testresults',
             subdir: '.',
             reporters: [
                 {
@@ -37,11 +42,11 @@ module.exports = function (config) {
         },
 
         remapIstanbulReporter: {
-            src: 'coverage/json/coverage-final.json',
+            src: 'testresults/json/coverage-final.json',
             reports: {
                 // use this also when lcov file is needed from other tools
                 //lcovonly: 'coverage/json/lcov.info',
-                html: 'coverage/html',
+                html: 'testresults/html',
                 'text-summary': null
             },
             timeoutNotCreated: 1000, // default value
@@ -49,8 +54,11 @@ module.exports = function (config) {
         },
 
         mochaReporter: {
-            output: 'autowatch'
-        },
+            output: 'autowatch',
+            colors: {
+                error: 'white'
+            }
+        },        
 
         plugins: [
             'karma-jasmine',
@@ -62,12 +70,12 @@ module.exports = function (config) {
             'karma-mocha-reporter',
             'karma-remap-istanbul'
         ],
-        reporters: ['mocha', 'coverage', 'karma-remap-istanbul'],
+        reporters: config.debug ? ['mocha'] : ['mocha', 'coverage', 'karma-remap-istanbul'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: true,
-        browsers: ['PhantomJS'],
+        autoWatch: !config.debug,
+        browsers: config.debug ? ['Chrome'] : ['PhantomJS'],
         singleRun: false
     };
 

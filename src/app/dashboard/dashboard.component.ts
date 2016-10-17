@@ -4,7 +4,7 @@ import { User } from '../shared';
 
 @Component({
     selector: 'my-dashboard',
-    template: require('./dashboard.component.html')
+    templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
     public users: User[] = [

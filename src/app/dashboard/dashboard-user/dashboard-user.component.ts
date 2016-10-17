@@ -4,8 +4,8 @@ import { User } from '../../shared';
 
 @Component({
     selector: 'my-dashboard-user',
-    template: require('./dashboard-user.component.html'),
-    styles: [require('./dashboard-user.component.scss')]
+    templateUrl: './dashboard-user.component.html',
+    styleUrls: ['./dashboard-user.component.scss']
 })
 export class DashboardUserComponent {
 

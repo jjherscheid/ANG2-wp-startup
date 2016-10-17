@@ -5,6 +5,10 @@
         "node_modules/codelyzer"
     ],
     "rules": {
+        "max-line-length": [
+            true,
+            200
+        ],
         "quotemark": [
             true,
             "single",
@@ -17,6 +21,14 @@
                 "multiline": "never"
             }
         ],
+        "no-console": [
+            true,
+            "debug",
+            "log",
+            "time",
+            "timeEnd",
+            "trace"
+        ],
         "member-ordering": [
             true,
             "static-before-instance",
@@ -28,18 +40,25 @@
         "member-access": true,
         "no-trailing-whitespace": false,
         "no-var-requires": false,
-        "directive-selector-prefix": [
+        "variable-name": [
             true,
-            "my"
-        ],
-        "component-selector-prefix": [
-            true,
-            "my"
+            "allow-leading-underscore"
         ],
         "pipe-naming": [
             true,
-            "camelCase",
-            "my"
+            "camelCase"
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ],
+        "interface-name": [
+            true,
+            "never-prefix"
         ]
     }
 }

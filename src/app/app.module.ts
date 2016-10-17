@@ -1,20 +1,27 @@
-import { NgModule }       from '@angular/core';
+import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
-import { RouterModule }   from '@angular/router';
+import { HttpModule } from '@angular/http';
 
-import { AppComponent }   from './app.component';
-import { APP_ROUTES }     from './app.routes';
+// Routing of application
+import { AppRoutingModule } from './app.routing';
 
-import { DashboardModule } from './dashboard/dashboard.module';
+// Feature Modules (Non Lazy Loaded)
+import { DashboardModule } from './dashboard';
+
+// Root Application Component 
+import { AppComponent } from './app.component';
 
 @NgModule({
-    declarations: [AppComponent],
     imports: [
         BrowserModule,
-        RouterModule,
-        DashboardModule,
-        APP_ROUTES
+        HttpModule,    
+        AppRoutingModule,
+        
+        DashboardModule
     ],
+    declarations: [AppComponent],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

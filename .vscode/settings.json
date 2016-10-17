@@ -7,7 +7,11 @@
         "**/node_modules/**": true,
         "**/typings/**": true,
         "**/dist/**": true,
-        "**/coverage/**": true
+        "**/testresults/**": true,
+        "**/npm-debug.log": true
     },
-    "tslint.enable": true
+    "tslint.enable": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
 }

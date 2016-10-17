@@ -1,47 +1,33 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var webpack = require('webpack');
 
 module.exports = {
-   entry: {
-        'polyfills': './src/polyfills.ts',
-        'vendor': './src/vendor.ts',
-        'app': './src/app.ts'
-    },
+    devtool: 'inline-source-map',
 
     resolve: {
-        extensions: ['', '.js', '.ts', '.css', '.scss']
-    },    
+        extensions: ['', '.ts', '.js']
+    },
 
     module: {
 
-        preLoaders: [
+        loaders: [
             {
                 test: /\.ts$/,
-                loader: 'tslint'
-            }
-        ],
-
-        loaders: [
-             {
-                test: /\.ts$/,
-                loader: 'ts!angular2-template-loader',
-                exclude: /\.(spec)\.ts$/
+                loader: 'ts!angular2-template-loader'
             },
             {
                 test: /\.html$/,
                 loader: 'html'
-            },            
+
+            },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file?name=assets/[name].[hash].[ext]'
+                loader: 'null'
             },
             {
                 test: /\.css$/,
                 exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+                loader: 'null'
             },
             {
                 test: /\.css$/,
@@ -51,7 +37,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
+                loader: 'null'
             },
             {
                 test: /\.scss$/,
@@ -62,12 +48,7 @@ module.exports = {
     },
 
     sassLoader: {
-        includePaths: ["./public/css"]
-    },
-
-    tslint: {
-        emitErrors: false,
-        failOnHint: false
+        includePaths: ["./public/styles"]
     },
 
     plugins: [
@@ -80,14 +61,6 @@ module.exports = {
 
         new webpack.ProvidePlugin({
             _: 'underscore'
-        }),
-
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills']
-        }),
-
-        new HtmlWebpackPlugin({
-            template: 'src/index.html'
         })
     ]
 };
